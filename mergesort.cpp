@@ -1,12 +1,13 @@
 #include <iostream>
 using namespace std;
 
-void merge(int arr[], int left, int mid, int right) {
+void merge(int arr[], int left, int mid, int right)
+{
     int n1 = mid - left + 1;
     int n2 = right - mid;
 
-    int* L = new int[n1];
-    int* R = new int[n2];
+    int *L = new int[n1];
+    int *R = new int[n2];
 
     for (int i = 0; i < n1; i++)
         L[i] = arr[left + i];
@@ -15,27 +16,31 @@ void merge(int arr[], int left, int mid, int right) {
 
     int i = 0, j = 0;
     int k = left;
-    
-    while (i < n1 && j < n2) {
-        if (L[i] <= R[j]) {
+
+    while (i < n1 && j < n2)
+    {
+        if (L[i] <= R[j])
+        {
             arr[k] = L[i];
             i++;
         }
-        else {
+        else
+        {
             arr[k] = R[j];
             j++;
         }
         k++;
     }
 
-
-    while (i < n1) {
+    while (i < n1)
+    {
         arr[k] = L[i];
         i++;
         k++;
     }
 
-    while (j < n2) {
+    while (j < n2)
+    {
         arr[k] = R[j];
         j++;
         k++;
@@ -45,7 +50,8 @@ void merge(int arr[], int left, int mid, int right) {
     delete[] R;
 }
 
-void mergeSort(int arr[], int left, int right) {
+void mergeSort(int arr[], int left, int right)
+{
     if (left >= right)
         return;
 
@@ -55,7 +61,8 @@ void mergeSort(int arr[], int left, int right) {
     merge(arr, left, mid, right);
 }
 
-int main() {
+int main()
+{
     int arr[] = {38, 27, 43, 10};
     int n = sizeof(arr) / sizeof(arr[0]);
 
