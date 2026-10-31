@@ -7,8 +7,6 @@ int swap(int* a, int* b){
 	*b = t;
 }
 
-
-
 int part(int* arr, int low , int  high){
 	int pivot= arr[low];
 	int i=low ,j=high;
@@ -22,7 +20,7 @@ int part(int* arr, int low , int  high){
 		if(i<j){
 			swap(arr[i],arr[j]);
 		}
-			swap(arr[low],arr[j]);
+		swap(arr[low],arr[j]);
 	}
 		return j; 
 	

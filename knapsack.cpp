@@ -1,7 +1,5 @@
 #include <iostream>
-
 using namespace std;
-
 
 struct Item {
     int weight;
@@ -22,6 +20,7 @@ void sortItems(Item items[], int n) {
     }
 }
 
+
 double fractionalKnapsack(int capacity, Item items[], int n) {
 
     sortItems(items, n);
@@ -29,12 +28,13 @@ double fractionalKnapsack(int capacity, Item items[], int n) {
     double totalValue = 0.0;
 
     for (int i = 0; i < n; i++) {
-        if (capacity >= items[i].weight) {
-            capacity -= items[i].weight;
-            totalValue += items[i].value;
-        } else {
-            totalValue += items[i].value * ((double)capacity / items[i].weight);
-            break; // Knapsack is full
+        if (capacity >= items[i].weight){
+                capacity -= items[i].weight;
+                totalValue += items[i].value;
+        } 
+        else{
+                totalValue += items[i].value * ((double)capacity / items[i].weight);
+                break; 
         }
     }
 
@@ -44,8 +44,6 @@ double fractionalKnapsack(int capacity, Item items[], int n) {
 int main() {
     int capacity = 50;
     int n = 3;
-    
-   
     Item items[3] = { {10, 60}, {20, 100}, {30, 120} };
 
     double maxVal = fractionalKnapsack(capacity, items, n);

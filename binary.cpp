@@ -17,6 +17,7 @@ int binarySearch(int arr[], int left, int right, int key)
 }   
 
 
+
 int main()
 {
     int n, key;
