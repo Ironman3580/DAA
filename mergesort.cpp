@@ -63,6 +63,7 @@ void mergeSort(int arr[], int left, int right)
 
 int main()
 {
+cout << "Original array: ";
     int arr[] = {38, 27, 43, 10};
     int n = sizeof(arr) / sizeof(arr[0]);
 

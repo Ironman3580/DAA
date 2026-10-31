@@ -14,19 +14,18 @@ void linearSearch(int arr[], int n, int key)
     }
     cout << "Element not found in the array." << endl;
 }
-
-
 int main()
 {
 
     int n , key;
+    cout << "Enter the number of elements in the array: ";
     cin >> n;
     int arr[n];
-    cin >> key;
-    
+    cout << "Enter the elements of the array: ";
     for (int i = 0; i < n; i++)
         cin >> arr[i];
-
+    cout << "Enter the key to search: ";
+    cin >> key;
     linearSearch(arr, n, key);
 
     return 0;

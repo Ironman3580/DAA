@@ -1,6 +1,7 @@
 //binary search
 #include <iostream>
 using namespace std;
+
 int binarySearch(int arr[], int left, int right, int key)
 {
     if (right >= left)
@@ -19,12 +20,14 @@ int binarySearch(int arr[], int left, int right, int key)
 int main()
 {
     int n, key;
+    cout << "Enter the number of elements in the array: ";
     cin >> n;
     int arr[n];
-    cin >> key;
-
+    cout << "Enter the elements of the array: ";
     for (int i = 0; i < n; i++)
         cin >> arr[i];
+    cout << "Enter the key to search: ";
+    cin >> key;
 
     int result = binarySearch(arr, 0, n - 1, key);
     if (result != -1)
